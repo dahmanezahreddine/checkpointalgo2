@@ -1,6 +1,21 @@
-ALGORITHM algorithm_name
+FUNCTION testword(word)
 VAR
-    set_declarations
+
 BEGIN
-    set_instructions
+IF (word = "" || word.length=1) THEN
+    RETURN "its palindrome"
+END_IF;
+IF (word[0] = word [word.length-1]) THEN
+    word.slice(1, word.length-1)
+    RETURN  word.slice(1, word.length-1)
+ELSE
+    RETURN "its not palindrome"
+END_IF
+END
+
+ALGORITHM testword
+VAR
+    word : STRING := ""
+BEGIN
+    testword(word)
 END
